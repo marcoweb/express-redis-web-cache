@@ -77,6 +77,18 @@ app.get("/tarefas", async (req, res) => {
     );
 });
 
+app.get("/tarefas-web", async (req, res) => {
+    const html = `
+        <html>
+            <body>
+                <h1>Horário: ${new Date()}</h1>
+            </body>
+        </html>
+    `;
+
+    res.send(html);
+});
+
 app.listen(3000, () => {
     console.log("Servidor executando em localhost");
 });
